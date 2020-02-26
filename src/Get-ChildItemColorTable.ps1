@@ -54,13 +54,38 @@ $GetChildItemColorExtensions.Add(
 )
 
 $GetChildItemColorExtensions.Add(
+    'Media',
+    @(
+	#picture
+	".png",
+	".jpg",
+	".jpeg",
+	".gif",
+	".jfif",
+	".ico",
+
+	#audio
+	".mp3",
+	".wma",
+	".mpeg",
+
+	#video
+	".mp4",
+	".avi",
+	".mov",
+	".wmv"
+    )
+)
+
+$GetChildItemColorExtensions.Add(
     'ConfigsList',
     @(
         ".cfg",
         ".conf",
         ".config",
         ".ini",
-        ".json"
+        ".json",
+	".lock"
     )
 )
 
@@ -193,12 +218,16 @@ ForEach ($Extension in $GetChildItemColorExtensions.TextList) {
     $GetChildItemColorTable.File.Add($Extension, "Yellow")
 }
 
+ForEach ($Extension in $GetChildItemColorExtensions.Media) {
+    $GetChildItemColorTable.File.Add($Extension, "DarkYellow")
+}
+
 ForEach ($Extension in $GetChildItemColorExtensions.DllPdbList) {
     $GetChildItemColorTable.File.Add($Extension, "DarkGreen")
 }
 
 ForEach ($Extension in $GetChildItemColorExtensions.ConfigsList) {
-    $GetChildItemColorTable.File.Add($Extension, "Gray")
+    $GetChildItemColorTable.File.Add($Extension, "Cyan")
 }
 
 ForEach ($Extension in $GetChildItemColorExtensions.SourceCodeList) {
