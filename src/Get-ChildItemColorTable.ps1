@@ -19,7 +19,8 @@ $GetChildItemColorExtensions.Add(
         ".cmd",
         ".reg",
         ".fsx",
-        ".sh"
+        ".sh",
+	".msi"
     )
 )
 
@@ -27,7 +28,10 @@ $GetChildItemColorExtensions.Add(
     'DllPdbList',
     @(
         ".dll",
-        ".pdb"
+        ".pdb",
+	".lnk",
+	".so",
+	".o"
     )
 )
 
@@ -39,7 +43,13 @@ $GetChildItemColorExtensions.Add(
         ".markdown",
         ".md",
         ".rst",
-        ".txt"
+        ".txt",
+	".doc",
+	".docx",
+	".xls",
+	".xlsx",
+	".ppt",
+	".pptx"
     )
 )
 
@@ -192,7 +202,7 @@ ForEach ($Extension in $GetChildItemColorExtensions.ConfigsList) {
 }
 
 ForEach ($Extension in $GetChildItemColorExtensions.SourceCodeList) {
-    $GetChildItemColorTable.File.Add($Extension, "DarkYellow")
+    $GetChildItemColorTable.File.Add($Extension, "Magenta")
 }
 
 $GetChildItemColorTable.Service.Add('Running', "DarkGreen")
